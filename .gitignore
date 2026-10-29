@@ -20,3 +20,4 @@ venv.bak/
 .cdk.staging/
 cdk.out/
 .DS_Store
+/fastapi-layer.zip
