@@ -23,3 +23,8 @@ def get_employee(employee_id: str):
         raise HTTPException(status_code=404, detail="Employee not found")
 
     return employee
+
+
+@router.put("/employees/{employee_id}")
+def save_employee(employee_id: str, payload: EmployeeIn):
+    return employee_service.save(employee_id, payload.model_dump(mode="json"))

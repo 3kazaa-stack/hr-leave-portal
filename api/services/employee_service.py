@@ -12,7 +12,15 @@ def create(data: dict) -> dict:
     return save(uuid.uuid4().hex[:8], data)
 
 
-def save(employee_id: str, data: dict) -> dict:
+def update(employee_id: str, data: dict) -> dict | None:
+    """Replace an existing employee. Returns None if the employee doesn't exist."""
+    try:
+        return save(employee_id, data, must_exist=True)
+    except table.meta.client.exceptions.ConditionalCheckFailedException:
+        return None
+
+
+def save(employee_id: str, data: dict, must_exist: bool = False) -> dict:
     """Create or replace an employee."""
     item = {
         "PK": "USER",
@@ -23,7 +31,8 @@ def save(employee_id: str, data: dict) -> dict:
         "startDate": data["startDate"],
         "role": data.get("role", "employee"),
     }
-    table.put_item(Item=item)
+    condition = {"ConditionExpression": "attribute_exists(SK)"} if must_exist else {}
+    table.put_item(Item=item, **condition)
     return item
 
 
