@@ -12,27 +12,20 @@ def create(data: dict) -> dict:
     return save(uuid.uuid4().hex[:8], data)
 
 
-def update(employee_id: str, data: dict) -> dict | None:
-    """Replace an existing employee. Returns None if the employee doesn't exist."""
-    try:
-        return save(employee_id, data, must_exist=True)
-    except table.meta.client.exceptions.ConditionalCheckFailedException:
-        return None
-
-
-def save(employee_id: str, data: dict, must_exist: bool = False) -> dict:
+def save(employee_id: str, data: dict) -> dict:
     """Create or replace an employee."""
     item = {
         "PK": "USER",
         "SK": employee_id,
+        "GSI1PK": "USER_BY_DATE",
+        "GSI1SK": data["startDate"],
         "employeeId": employee_id,
         "name": data["name"],
         "department": data["department"],
         "startDate": data["startDate"],
         "role": data.get("role", "employee"),
     }
-    condition = {"ConditionExpression": "attribute_exists(SK)"} if must_exist else {}
-    table.put_item(Item=item, **condition)
+    table.put_item(Item=item)
     return item
 
 
@@ -43,4 +36,12 @@ def get(employee_id: str) -> dict | None:
 
 def list_all() -> list[dict]:
     response = table.query(KeyConditionExpression=Key("PK").eq("USER"))
+    return response["Items"]
+    
+
+def list_by_hire_date(hired_from: str, hired_to: str) -> list[dict]:
+    response = table.query(
+        IndexName="GSI1",
+        KeyConditionExpression=Key("GSI1PK").eq("USER_BY_DATE")
+        & Key("GSI1SK").between(hired_from, hired_to))
     return response["Items"]
