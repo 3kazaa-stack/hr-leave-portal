@@ -1,0 +1,7 @@
+{
+  "region": "us-east-1",
+  "apiUrl": "https://<api-id>.execute-api.us-east-1.amazonaws.com/prod/",
+  "userPoolId": "us-east-1_<pool-id>",
+  "userPoolClientId": "<user-pool-client-id>",
+  "agentRuntimeArn": "arn:aws:bedrock-agentcore:us-east-1:<account-id>:runtime/<runtime-id>"
+}
