@@ -9,6 +9,7 @@ from hr_leave_portal.notification_stack import NotificationStack
 from hr_leave_portal.state_machine_stack import StateMachineStack
 from hr_leave_portal.ui_deployment_stack import DEFAULT_UI_DIST_PATH, UiDeploymentStack
 from hr_leave_portal.ui_hosting_stack import UiHostingStack
+from hr_leave_portal.dashboard_stack import DashboardStack
 
 LOCAL_DEV_ORIGIN = "http://localhost:5173"
 
@@ -60,5 +61,10 @@ else:
         "Run `npm --prefix ui run build` first to deploy the web UI.",
         file=sys.stderr,
     )
+
+DashboardStack(
+    app, "HrLeavePortalDashboard", api_function=backend.api_function, api=backend.api
+)
+
 
 app.synth()
