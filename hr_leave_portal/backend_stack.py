@@ -83,7 +83,10 @@ class BackendStack(Stack):
             environment={
                 "TABLE_NAME": table.table_name,
                 "ALLOWED_ORIGINS": ",".join(origins),
+                "POWERTOOLS_SERVICE_NAME": "hr-api",
+                "POWERTOOLS_LOG_LEVEL": "INFO",
             },
+            tracing=lambda_.Tracing.ACTIVE,
         )
 
         table.grant_read_write_data(api_function)
