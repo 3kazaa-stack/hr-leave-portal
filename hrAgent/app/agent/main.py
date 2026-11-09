@@ -4,7 +4,7 @@ from strands import Agent, tool
 from strands.agent.conversation_manager.null_conversation_manager import NullConversationManager
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from model.load import load_model
-from parse import parse_payload
+from parse import DEFAULT_ACTOR_ID, parse_payload
 from memory.session import get_memory_session_manager
 from tools import email_tools, employee_tools, leave_tools
 
@@ -81,7 +81,13 @@ def create_app():
         log.info("Invoking Agent.....")
 
         session_id = getattr(context, "session_id", None) or "default-session"
-        prompt, actor_id = parse_payload(payload)
+        headers = getattr(context, "request_headers", None) or {}
+        prompt, actor_id = parse_payload(payload, headers)
+        if actor_id == DEFAULT_ACTOR_ID:
+            log.warning(
+                "No Authorization header reached the agent; using the shared default actor id. "
+                "This is expected only for local `agentcore dev`."
+            )
 
         log.info(f"Invoking with session_id={session_id} and actor_id={actor_id}")
         agent = _get_agent(session_id, actor_id)

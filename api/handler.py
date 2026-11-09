@@ -3,11 +3,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
 
 from controllers import employee_controller, hr_request_controller, leave_controller
+from cors import allowed_origins
 
 app = FastAPI(title="HR Leave Portal")
 
 app.add_middleware(
-    CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
+    CORSMiddleware,
+    allow_origins=allowed_origins(),
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(employee_controller.router)

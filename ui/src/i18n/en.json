@@ -1,0 +1,196 @@
+{
+  "app": {
+    "title": "HR Leave Portal",
+    "logoAlt": "HR Leave Portal logo"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "employees": "Employees",
+    "hrRequests": "HR requests",
+    "chat": "HR assistant"
+  },
+  "header": {
+    "language": "Language",
+    "switchLanguage": "العربية",
+    "signedInAs": "Signed in as {name}",
+    "signOut": "Sign out"
+  },
+  "session": {
+    "expired": "Your session has expired. Please sign in again."
+  },
+  "startup": {
+    "title": "The portal could not start",
+    "body": "The configuration file config.json is missing or invalid. Ask your administrator to redeploy the portal.",
+    "loading": "Loading the portal…"
+  },
+  "common": {
+    "loading": "Loading…",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "saving": "Saving…",
+    "sending": "Sending…",
+    "error": "Something went wrong. Please try again.",
+    "networkError": "The HR service could not be reached. Check your connection and try again.",
+    "validationError": "The HR service rejected the request: {detail}",
+    "dismiss": "Dismiss"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "dateRangeBothRequired": "Enter both dates to apply the filter.",
+    "dateRangeOrder": "The \"from\" date must not be after the \"to\" date.",
+    "endBeforeStart": "The end date must not be before the start date.",
+    "promptRequired": "Describe your request before sending it."
+  },
+  "employees": {
+    "title": "Employees",
+    "empty": "No employees found.",
+    "tableLabel": "Employee list",
+    "columns": {
+      "name": "Name",
+      "department": "Department",
+      "startDate": "Start date",
+      "role": "Role",
+      "employeeId": "Employee ID"
+    },
+    "open": "Open {name}",
+    "filter": {
+      "title": "Filter by hire date",
+      "from": "Hired from",
+      "to": "Hired to",
+      "apply": "Apply filter",
+      "clear": "Clear filter",
+      "active": "Showing employees hired from {from} to {to}."
+    },
+    "create": {
+      "title": "Add an employee",
+      "name": "Name",
+      "department": "Department",
+      "startDate": "Start date",
+      "role": "Role",
+      "submit": "Add employee",
+      "success": "{name} was added."
+    }
+  },
+  "employee": {
+    "back": "Back to employees",
+    "notFound": "Employee not found",
+    "details": "Employee details"
+  },
+  "leave": {
+    "title": "Leave",
+    "empty": "No leave recorded.",
+    "tableLabel": "Leave list",
+    "month": "Month",
+    "showAll": "Show all months",
+    "columns": {
+      "startDate": "Start date",
+      "endDate": "End date",
+      "note": "Note",
+      "actions": "Actions"
+    },
+    "edit": "Edit",
+    "create": {
+      "title": "Record leave",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "note": "Note",
+      "submit": "Record leave"
+    },
+    "update": {
+      "title": "Edit leave starting {date}",
+      "submit": "Save changes"
+    },
+    "overwrite": {
+      "warning": "Leave starting on {date} already exists. Saving will replace it.",
+      "confirm": "Replace existing leave"
+    },
+    "saved": "Leave saved."
+  },
+  "hr": {
+    "title": "HR requests",
+    "intro": "Requests are emailed to the HR team. The portal cannot show their status.",
+    "timeOff": {
+      "title": "Request time off",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "submit": "Send time-off request"
+    },
+    "inquiry": {
+      "title": "Ask HR a question",
+      "prompt": "Your request",
+      "submit": "Send to HR"
+    },
+    "sent": "Your request was sent to HR by email."
+  },
+  "chat": {
+    "title": "HR assistant",
+    "open": "Open the HR assistant",
+    "close": "Close the HR assistant",
+    "input": "Message the HR assistant",
+    "send": "Send",
+    "newConversation": "New conversation",
+    "empty": "Ask about employees, leave or HR requests.",
+    "you": "You",
+    "agent": "HR assistant",
+    "thinking": "The assistant is replying…",
+    "retry": "Retry",
+    "errors": {
+      "network": "The HR assistant could not be reached. Check your connection and retry.",
+      "http": "The HR assistant returned an error ({status}).",
+      "stream-interrupted": "The reply was cut off before it finished.",
+      "agent": "The HR assistant could not complete the request.",
+      "session-expired": "Your session has expired. Please sign in again."
+    }
+  },
+  "amplify": {
+    "Sign In": "Sign In",
+    "Sign in": "Sign in",
+    "Signing in": "Signing in",
+    "Sign in to your account": "Sign in to your account",
+    "Username": "Username",
+    "Enter your username": "Enter your username",
+    "Email": "Email",
+    "Enter your Email": "Enter your email",
+    "Password": "Password",
+    "Enter your Password": "Enter your password",
+    "Show password": "Show password",
+    "Hide password": "Hide password",
+    "Forgot your password?": "Forgot your password?",
+    "Forgot password?": "Forgot password?",
+    "Reset your password": "Reset your password",
+    "Reset your Password": "Reset your password",
+    "Send code": "Send code",
+    "Send Code": "Send code",
+    "Sending": "Sending",
+    "Back to Sign In": "Back to sign in",
+    "Code": "Code",
+    "Code *": "Code *",
+    "Confirmation Code": "Confirmation code",
+    "Enter your code": "Enter your code",
+    "Enter your Confirmation Code": "Enter your confirmation code",
+    "Resend Code": "Resend code",
+    "It may take a minute to arrive": "It may take a minute to arrive",
+    "New password": "New password",
+    "New Password": "New password",
+    "Confirm Password": "Confirm password",
+    "Please confirm your Password": "Please confirm your password",
+    "Change Password": "Change password",
+    "Changing": "Changing",
+    "Submit": "Submit",
+    "Submitting": "Submitting",
+    "Confirm": "Confirm",
+    "Confirming": "Confirming",
+    "Skip": "Skip",
+    "Verify": "Verify",
+    "Verify Contact": "Verify contact",
+    "Account recovery requires verified contact information": "Account recovery requires verified contact information",
+    "We Emailed You": "We emailed you",
+    "Your code is on the way. To log in, enter the code we emailed to": "Your code is on the way. To log in, enter the code we emailed to",
+    "Loading": "Loading",
+    "Dismiss alert": "Dismiss alert",
+    "Incorrect username or password.": "Incorrect username or password.",
+    "User does not exist.": "User does not exist.",
+    "Password must have at least 8 characters": "Password must have at least 8 characters",
+    "Your passwords must match": "Your passwords must match"
+  }
+}

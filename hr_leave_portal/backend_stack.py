@@ -1,3 +1,5 @@
+from collections.abc import Sequence
+
 from aws_cdk import (
     CfnOutput,
     Duration,
@@ -14,10 +16,30 @@ from constructs import Construct
 # The build script publishes the layer's Version ARN to this SSM parameter.
 LAYER_ARN_PARAM = "/hr-leave-portal/fastapi-layer-arn"
 
+# Headers the browser may send, matching what the UI's REST client uses.
+CORS_ALLOW_HEADERS = [
+    "Authorization",
+    "Content-Type",
+    "X-Amz-Date",
+    "X-Api-Key",
+    "X-Amz-Security-Token",
+]
+
 
 class BackendStack(Stack):
-    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+    def __init__(
+        self,
+        scope: Construct,
+        construct_id: str,
+        *,
+        allowed_origins: Sequence[str],
+        **kwargs,
+    ) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        origins = list(allowed_origins)
+        if not origins or "*" in origins:
+            raise ValueError("allowed_origins must list the UI origins and must not contain '*'")
 
         table = dynamodb.Table(
             self,
@@ -58,7 +80,10 @@ class BackendStack(Stack):
             layers=[fastapi_layer],
             timeout=Duration.seconds(10),
             memory_size=512,
-            environment={"TABLE_NAME": table.table_name},
+            environment={
+                "TABLE_NAME": table.table_name,
+                "ALLOWED_ORIGINS": ",".join(origins),
+            },
         )
 
         table.grant_read_write_data(api_function)
@@ -88,13 +113,34 @@ class BackendStack(Stack):
             "HrApi",
             handler=api_function,
             default_cors_preflight_options=apigw.CorsOptions(
-                allow_origins=apigw.Cors.ALL_ORIGINS,
+                allow_origins=origins,
                 allow_methods=apigw.Cors.ALL_METHODS,
+                allow_headers=CORS_ALLOW_HEADERS,
             ),
             default_method_options=apigw.MethodOptions(
                 authorization_type=apigw.AuthorizationType.COGNITO,
                 authorizer=authorizer,
             ),
+        )
+
+        # API Gateway's own 401/403/5xx responses carry no CORS headers by default,
+        # so the browser could not read them (FR6.1). A Gateway Response holds one
+        # static origin, so it uses the first (the UI's CloudFront origin).
+        gateway_cors_headers = {
+            "Access-Control-Allow-Origin": f"'{origins[0]}'",
+            "Access-Control-Allow-Headers": f"'{','.join(CORS_ALLOW_HEADERS)}'",
+            "Access-Control-Allow-Methods": "'OPTIONS,GET,POST,PUT'",
+            "Vary": "'Origin'",
+        }
+        self.api.add_gateway_response(
+            "Default4xx",
+            type=apigw.ResponseType.DEFAULT_4_XX,
+            response_headers=gateway_cors_headers,
+        )
+        self.api.add_gateway_response(
+            "Default5xx",
+            type=apigw.ResponseType.DEFAULT_5_XX,
+            response_headers=gateway_cors_headers,
         )
 
         CfnOutput(self, "ApiUrl", value=self.api.url)

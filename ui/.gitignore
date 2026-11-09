@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Runtime config: written by the UI deployment stack, local copy is dev-only
+public/config.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

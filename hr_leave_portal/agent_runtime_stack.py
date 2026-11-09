@@ -44,6 +44,11 @@ class AgentRuntimeStack(Stack):
             agent_runtime_artifact=agent_artifact,
             protocol_configuration=agentcore.ProtocolType.HTTP,
             authorizer_configuration=cognito_auth,
+            # Pass the validated JWT through to the container so the agent can read
+            # the caller's `sub` as its actor id (FR6.3).
+            request_header_configuration=agentcore.RequestHeaderConfiguration(
+                allowlisted_headers=["Authorization"]
+            ),
             environment_variables={
                 "TABLE_NAME": table.table_name,
                 "HR_EMAIL_TOPIC_ARN": hr_email_topic.topic_arn,
@@ -78,5 +83,7 @@ class AgentRuntimeStack(Stack):
                     f"arn:aws:ecr:{Aws.REGION}:{Aws.ACCOUNT_ID}:repository/{agent_repo_name}"
                 ])
         )
+
+        self.agent_runtime_arn = agent_runtime.agent_runtime_arn
 
         CfnOutput(self, "AgentRuntimeArn", value=agent_runtime.agent_runtime_arn)
