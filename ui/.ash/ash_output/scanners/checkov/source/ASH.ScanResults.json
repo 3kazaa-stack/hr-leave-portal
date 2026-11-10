@@ -1,0 +1,1 @@
+{"scanner_name": "checkov", "target": "/Users/abdulaziz/projects/hr-leave-portal/ui", "target_type": "source", "exit_code": 0, "finding_count": 0, "start_time": "2026-11-10T21:15:31.341603Z", "end_time": "2026-11-10T21:15:38.565659Z", "duration": 7.224056, "severity_counts": {}, "status": "PASSED"}

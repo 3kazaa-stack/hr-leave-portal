@@ -1,0 +1,1 @@
+{"scanner_name": "npm-audit", "target": "/Users/abdulaziz/projects/hr-leave-portal/ui", "target_type": "source", "exit_code": 1, "finding_count": 10, "start_time": "2026-11-10T21:15:31.345756Z", "end_time": "2026-11-10T21:15:34.715803Z", "duration": 3.370047, "severity_counts": {"medium": 10}, "status": "PASSED"}

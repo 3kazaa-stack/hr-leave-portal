@@ -1,0 +1,904 @@
+[
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 175",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 175",
+      "uid": "b7765c2c-b6e8-4ae1-8a31-8d373f13321b"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 175,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 175
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 175",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 175",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 176",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 176",
+      "uid": "10571c6c-219c-472b-bb74-d53803f58c54"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 176,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 176
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 176",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 176",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 155",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 155",
+      "uid": "4f72a0f5-1b3f-4998-a399-3d1beeb6f0f0"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 155,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 155
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 155",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 155",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 160",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 160",
+      "uid": "2a8e420d-18c8-4b15-a2ec-985a704a8537"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 160,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 160
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 160",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 160",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 156",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 156",
+      "uid": "4fc91415-deb6-49ef-b91e-9901559dab08"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 156,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 156
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 156",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 156",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 177",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 177",
+      "uid": "f066eb9d-b8df-4fbb-ac85-953baae8e591"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 177,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 177
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 177",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 177",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 157",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 157",
+      "uid": "5d222ee8-c1f7-452d-a386-aaa80ff85f4c"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 157,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 157
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 157",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 157",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 173",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 173",
+      "uid": "cf016657-a451-417a-ae49-b60fcc490650"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 173,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 173
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 173",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 173",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 154",
+      "title": "SECRET-SECRET-KEYWORD in en.json - Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 154",
+      "uid": "46f32b8c-1790-42ae-88fa-98121a83ebf6"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 4,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "end_line": 154,
+            "file": {
+              "name": "en.json",
+              "path": "src/i18n/en.json",
+              "type_id": 1
+            },
+            "start_line": 154
+          }
+        ],
+        "cve": {
+          "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 154",
+          "uid": "SECRET-SECRET-KEYWORD"
+        },
+        "desc": "Secret of type 'Secret Keyword' detected in file 'src/i18n/en.json' at line 154",
+        "severity": "ERROR",
+        "title": "SECRET-SECRET-KEYWORD"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @eslint/config-array (via minimatch) >=0.23.0",
+      "title": "npm-audit-transitive-@eslint/config-array in package.json - Transitive vulnerability in @eslint/config-array (via minima...",
+      "uid": "009fb3a2-e923-4b5d-b9cb-8ecc7967576e"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@eslint/config-array/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @eslint/config-array (via minimatch) >=0.23.0",
+          "uid": "npm-audit-transitive-@eslint/config-array"
+        },
+        "desc": "Transitive vulnerability in @eslint/config-array (via minimatch) >=0.23.0",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@eslint/config-array"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @eslint/js (via eslint) >=10.0.1",
+      "title": "npm-audit-transitive-@eslint/js in package.json - Transitive vulnerability in @eslint/js (via eslint) >=10.0.1",
+      "uid": "9c4f58e4-938d-4848-b933-46666586992e"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@eslint/js/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @eslint/js (via eslint) >=10.0.1",
+          "uid": "npm-audit-transitive-@eslint/js"
+        },
+        "desc": "Transitive vulnerability in @eslint/js (via eslint) >=10.0.1",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@eslint/js"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @typescript-eslint/eslint-plugin (via @typescript-eslint/type-utils, @typescript-eslint/utils) 6.16.0 - 8.72.2",
+      "title": "npm-audit-transitive-@typescript-eslint/eslint-plugin in package.json - Transitive vulnerability in @typescript-eslint/e...",
+      "uid": "59429610-ee16-41fa-824e-141ece39aef6"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@typescript-eslint/eslint-plugin/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @typescript-eslint/eslint-plugin (via @typescript-eslint/type-utils, @typescript-eslint/utils) 6.16.0 - 8.72.2",
+          "uid": "npm-audit-transitive-@typescript-eslint/eslint-plugin"
+        },
+        "desc": "Transitive vulnerability in @typescript-eslint/eslint-plugin (via @typescript-eslint/type-utils, @typescript-eslint/utils) 6.16.0 - 8.72.2",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@typescript-eslint/eslint-plugin"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @typescript-eslint/parser (via @typescript-eslint/typescript-estree) 6.16.0 - 8.72.2",
+      "title": "npm-audit-transitive-@typescript-eslint/parser in package.json - Transitive vulnerability in @typescript-eslint/parser (...",
+      "uid": "75f589a1-8b8a-48bc-be5a-5c57f5fd056d"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@typescript-eslint/parser/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @typescript-eslint/parser (via @typescript-eslint/typescript-estree) 6.16.0 - 8.72.2",
+          "uid": "npm-audit-transitive-@typescript-eslint/parser"
+        },
+        "desc": "Transitive vulnerability in @typescript-eslint/parser (via @typescript-eslint/typescript-estree) 6.16.0 - 8.72.2",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@typescript-eslint/parser"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @typescript-eslint/type-utils (via @typescript-eslint/typescript-estree, @typescript-eslint/utils) 6.16.0 - 8.72.2",
+      "title": "npm-audit-transitive-@typescript-eslint/type-utils in package.json - Transitive vulnerability in @typescript-eslint/type...",
+      "uid": "ed642d08-f081-4433-abea-83e22617ef61"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@typescript-eslint/type-utils/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @typescript-eslint/type-utils (via @typescript-eslint/typescript-estree, @typescript-eslint/utils) 6.16.0 - 8.72.2",
+          "uid": "npm-audit-transitive-@typescript-eslint/type-utils"
+        },
+        "desc": "Transitive vulnerability in @typescript-eslint/type-utils (via @typescript-eslint/typescript-estree, @typescript-eslint/utils) 6.16.0 - 8.72.2",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@typescript-eslint/type-utils"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @typescript-eslint/typescript-estree (via minimatch) 6.16.0 - 8.72.2",
+      "title": "npm-audit-transitive-@typescript-eslint/typescript-estree in package.json - Transitive vulnerability in @typescript-esli...",
+      "uid": "a6726f4f-cd6f-4c17-9fa5-2de88a39de40"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@typescript-eslint/typescript-estree/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @typescript-eslint/typescript-estree (via minimatch) 6.16.0 - 8.72.2",
+          "uid": "npm-audit-transitive-@typescript-eslint/typescript-estree"
+        },
+        "desc": "Transitive vulnerability in @typescript-eslint/typescript-estree (via minimatch) 6.16.0 - 8.72.2",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@typescript-eslint/typescript-estree"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in @typescript-eslint/utils (via @typescript-eslint/typescript-estree) 6.16.0 - 8.72.2",
+      "title": "npm-audit-transitive-@typescript-eslint/utils in package.json - Transitive vulnerability in @typescript-eslint/utils (vi...",
+      "uid": "3006cc29-1a03-4352-a3d4-0d97bcdd6e2d"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/@typescript-eslint/utils/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in @typescript-eslint/utils (via @typescript-eslint/typescript-estree) 6.16.0 - 8.72.2",
+          "uid": "npm-audit-transitive-@typescript-eslint/utils"
+        },
+        "desc": "Transitive vulnerability in @typescript-eslint/utils (via @typescript-eslint/typescript-estree) 6.16.0 - 8.72.2",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-@typescript-eslint/utils"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in eslint (via @eslint/config-array, minimatch) >=10.0.0-alpha.0",
+      "title": "npm-audit-transitive-eslint in package.json - Transitive vulnerability in eslint (via @eslint/config-array, minimatch) >...",
+      "uid": "5f6e4736-691a-41d9-9ea8-a6e730631292"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/eslint/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in eslint (via @eslint/config-array, minimatch) >=10.0.0-alpha.0",
+          "uid": "npm-audit-transitive-eslint"
+        },
+        "desc": "Transitive vulnerability in eslint (via @eslint/config-array, minimatch) >=10.0.0-alpha.0",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-eslint"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "minimatch has potential denial of service via globparts amplification in minimatch 7.0.0 - 11.0.0. https://github.com/advisories/GHSA-g3hv-75wg-m249",
+      "title": "GHSA-g3hv-75wg-m249 in package.json - minimatch has potential denial of service via globparts amplification in minimatch...",
+      "uid": "568bca7c-a845-4d97-be74-32704259d44d"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/minimatch/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "minimatch has potential denial of service via globparts amplification in minimatch 7.0.0 - 11.0.0. https://github.com/advisories/GHSA-g3hv-75wg-m249",
+          "uid": "GHSA-g3hv-75wg-m249"
+        },
+        "desc": "minimatch has potential denial of service via globparts amplification in minimatch 7.0.0 - 11.0.0. https://github.com/advisories/GHSA-g3hv-75wg-m249",
+        "severity": "WARNING",
+        "title": "GHSA-g3hv-75wg-m249"
+      }
+    ]
+  },
+  {
+    "activity_id": 1,
+    "activity_name": "Scan",
+    "category_name": "Findings",
+    "category_uid": 2,
+    "class_uid": 2002,
+    "finding_info": {
+      "desc": "Transitive vulnerability in typescript-eslint (via @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @typescript-eslint/typescript-estree, @typescript-eslint/utils) <=8.72.2",
+      "title": "npm-audit-transitive-typescript-eslint in package.json - Transitive vulnerability in typescript-eslint (via @typescript-...",
+      "uid": "076bec18-b6ee-4e59-941b-c64a0413a8a5"
+    },
+    "metadata": {
+      "logged_time": 1794345338664,
+      "product": {
+        "name": "Automated Security Helper",
+        "vendor_name": "Amazon Web Services",
+        "version": "3.7.0"
+      },
+      "version": "1.1.0"
+    },
+    "severity_id": 3,
+    "status": "New",
+    "status_id": 1,
+    "time": 1794345338664,
+    "type_uid": 200201,
+    "vulnerabilities": [
+      {
+        "affected_code": [
+          {
+            "file": {
+              "name": "package.json",
+              "path": "node_modules/typescript-eslint/package.json",
+              "type_id": 1
+            },
+            "start_line": 1
+          }
+        ],
+        "cve": {
+          "desc": "Transitive vulnerability in typescript-eslint (via @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @typescript-eslint/typescript-estree, @typescript-eslint/utils) <=8.72.2",
+          "uid": "npm-audit-transitive-typescript-eslint"
+        },
+        "desc": "Transitive vulnerability in typescript-eslint (via @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @typescript-eslint/typescript-estree, @typescript-eslint/utils) <=8.72.2",
+        "severity": "WARNING",
+        "title": "npm-audit-transitive-typescript-eslint"
+      }
+    ]
+  }
+]

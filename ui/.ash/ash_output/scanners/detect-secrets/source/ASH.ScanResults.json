@@ -1,0 +1,1 @@
+{"scanner_name": "detect-secrets", "target": "/Users/abdulaziz/projects/hr-leave-portal/ui", "target_type": "source", "exit_code": 0, "finding_count": 9, "start_time": "2026-11-10T21:15:31.342746Z", "end_time": "2026-11-10T21:15:33.477837Z", "duration": 2.135091, "severity_counts": {"critical": 9}, "status": "PASSED"}
