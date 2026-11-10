@@ -14,6 +14,10 @@ from constructs import Construct
 # build_and_push_agent.sh stores the pushed image URI in this SSM parameter.
 AGENT_IMAGE_URI_PARAM = "/hr-leave-portal/agent-image-uri"
 
+# The only model the agent invokes. Keep this in step with
+# hrAgent/app/agent/model/load.py and email_tools.py.
+AGENT_MODEL_ID = "global.anthropic.claude-sonnet-5"
+
 
 class AgentRuntimeStack(Stack):
     def __init__(
@@ -26,6 +30,13 @@ class AgentRuntimeStack(Stack):
         user_pool_client: cognito.IUserPoolClient,
         **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+  # A "global." model id is served by inference profiles, so the role needs
+        # both the profile it calls through and the underlying foundation models.
+        model_resources = [
+            f"arn:aws:bedrock:{Aws.REGION}:{Aws.ACCOUNT_ID}:inference-profile/{AGENT_MODEL_ID}",
+            "arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-5",
+        ]
 
         agent_image_uri = ssm.StringParameter.value_for_string_parameter(
             self, AGENT_IMAGE_URI_PARAM
@@ -63,7 +74,7 @@ class AgentRuntimeStack(Stack):
                     "bedrock:InvokeModel",
                     "bedrock:InvokeModelWithResponseStream",
                 ],
-                resources=["*"])
+                resources=model_resources)
         )
 
         repo_with_tag = Fn.select(1, Fn.split("/", agent_image_uri))
@@ -84,6 +95,19 @@ class AgentRuntimeStack(Stack):
                 ])
         )
 
+
+        agent_runtime.add_to_role_policy(
+            iam.PolicyStatement(
+                actions=[
+                    "dynamodb:PutItem",
+                    "dynamodb:GetItem",
+                    "dynamodb:Query",
+                    "dynamodb:DeleteItem",
+                ],
+                resources=[table.table_arn, f"{table.table_arn}/index/*"])
+        )
+
+        
         self.agent_runtime_arn = agent_runtime.agent_runtime_arn
 
         CfnOutput(self, "AgentRuntimeArn", value=agent_runtime.agent_runtime_arn)

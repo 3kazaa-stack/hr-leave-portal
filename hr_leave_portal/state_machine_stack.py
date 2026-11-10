@@ -1,6 +1,7 @@
 import json
 
 from aws_cdk import (
+    Aws,
     CfnOutput,
     Stack,
     aws_iam as iam,
@@ -10,6 +11,8 @@ from aws_cdk import (
 from constructs import Construct
 
 STATE_MACHINE_DEFINITION_FILE = "state_machines/hr_state_machine_definition.json"
+# The only model the workflow invokes, from the state machine definition.
+WORKFLOW_MODEL_ID = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
 
 
 class StateMachineStack(Stack):
@@ -35,13 +38,24 @@ class StateMachineStack(Stack):
             assumed_by=iam.ServicePrincipal("states.amazonaws.com"))
 
         state_machine_role.add_to_policy(
-            iam.PolicyStatement(actions=["bedrock:InvokeModel"], resources=["*"])
+            iam.PolicyStatement(
+                actions=["bedrock:InvokeModel"],
+                resources=[
+                    f"arn:aws:bedrock:{Aws.REGION}:{Aws.ACCOUNT_ID}:"
+                    f"inference-profile/{WORKFLOW_MODEL_ID}",
+                    "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+                ],
+            )
         )
 
         hr_email_topic.grant_publish(state_machine_role)
 
         state_machine_role.add_to_policy(
-            iam.PolicyStatement(actions=["cloudwatch:PutMetricData"], resources=["*"])
+            iam.PolicyStatement(
+                actions=["cloudwatch:PutMetricData"],
+                resources=["*"],
+                conditions={"StringEquals": {"cloudwatch:namespace": "HR"}},
+            )
         )
 
         hr_state_machine = sfn.CfnStateMachine(
