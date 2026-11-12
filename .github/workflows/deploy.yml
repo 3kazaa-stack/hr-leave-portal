@@ -35,7 +35,7 @@ jobs:
       - name: UI unit tests (vitest)
         run: cd ui && npm install && npm test
 
-    security:
+  security:
     name: security
     runs-on: ubuntu-latest
     steps:
@@ -65,7 +65,7 @@ jobs:
       - name: Dependency scan (UI) — WARN
         run: cd ui && npm audit --audit-level=high || echo "::warning::npm audit reported vulnerabilities, triage them"
 
-    ash:
+  ash:
     name: security · ASH
     runs-on: ubuntu-latest
     steps:
