@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  AWS_REGION: us-east-1
+
 jobs:
   test:
     name: test
@@ -89,3 +92,101 @@ jobs:
           name: ash-report
           path: .ash/ash_output/reports/
           retention-days: 7
+
+  build-layer:
+    name: package · fastapi-layer
+    runs-on: ubuntu-latest
+    needs: [test, security]
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Setup uv (+ Python 3.14)
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: '3.14'
+          cache-suffix: ${{ github.job }}
+      - name: Build & publish FastAPI layer
+        run: |
+          chmod +x scripts/build_layer.sh
+          ./scripts/build_layer.sh
+
+  build-agent-image:
+    name: package · agent-image
+    runs-on: ubuntu-latest          # on a paid plan, ubuntu-24.04-arm is faster (native arm64, no QEMU)
+    needs: [test, security]
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          cache-suffix: ${{ github.job }}
+      - name: Set up QEMU (arm64 emulation)
+        uses: docker/setup-qemu-action@v4
+      - name: Generate agent uv.lock
+        run: cd hrAgent/app/agent && uv lock
+      - name: Build & push agent image
+        env:
+          CONTAINER_CLI: docker
+        run: |
+          chmod +x scripts/build_and_push_agent.sh
+          ./scripts/build_and_push_agent.sh "${GITHUB_SHA::7}"
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: [build-layer, build-agent-image]
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Setup uv (+ Python 3.14)
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: '3.14'
+          cache-suffix: ${{ github.job }}
+      - name: Install Python deps (includes CDK CLI via aws-cdk-cli)
+        run: uv sync
+      - name: Build UI
+        run: cd ui && npm install && npm run build
+      - name: CDK deploy (all stacks)
+        run: uv run cdk deploy --all --require-approval never
+      - name: Verify stacks are healthy
+        run: |
+          set -euo pipefail
+          for S in HrLeavePortalNotifications HrLeavePortalUiHosting \
+                   HrLeavePortalBackend HrLeavePortalStateMachine \
+                   HrLeavePortalAgentRuntime HrLeavePortalDashboard \
+                   HrLeavePortalUiDeployment; do
+            STATUS=$(aws cloudformation describe-stacks --stack-name "$S" \
+              --region "${{ env.AWS_REGION }}" \
+              --query 'Stacks[0].StackStatus' --output text 2>/dev/null || echo MISSING)
+            echo "$S -> $STATUS"
+            case "$STATUS" in *COMPLETE) ;; *) echo "::error::$S not healthy"; exit 1 ;; esac
+          done
